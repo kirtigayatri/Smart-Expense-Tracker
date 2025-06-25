@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Expense Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #fff0f5;
+      color: #333;
+    }
+    header {
+      background: #ffb6c1;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .container {
+      padding: 2rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    .charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.chart-box {
+  width: 100%;
+  max-width: 300px;  /* match your red box width */
+  height: 200px;     /* adjust based on desired chart height */
+  margin: 0 auto;
+}
+.chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+    canvas {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .form-section, .filter-section {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .form-section input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-section button {
+      background: #ff69b4;
+      color: white;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #f2f2f2;
+      padding: 0.8rem;
+      text-align: left;
+    }
+    th {
+      background: #ffe4e1;
+    }
+    @media (max-width: 768px) {
+      .charts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Smart Expense Tracker</header>
+  <div class="container">
+    <!-- Summary -->
+    <div class="summary">
+      <div class="card">
+        <h3>Total Income</h3>
+        <p id="totalIncome">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Total Expenses</h3>
+        <p id="totalExpense">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Net Savings</h3>
+        <p id="netSavings">₹0.00</p>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <div class="chart-box"><canvas id="barChart"></canvas></div>
+      <div class="chart-box"><canvas id="pieChart"></canvas></div>
+      <div class="chart-box"><canvas id="lineChart"></canvas></div>
+    </div>
+    
+   
+
+    
+
+    <!-- Add Expense / Income -->
+    <div class="form-section">
+      <h3>Add Transaction</h3>
+      <input type="text" placeholder="Amount" id="amount" />
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="text" placeholder="Category" id="category" />
+      <input type="text" placeholder="Description" id="description" />
+      <input type="date" id="date" />
+      <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <!-- Filter / Search -->
+    <div class="filter-section">
+      <h3>Search & Filter</h3>
+      <input type="text" id="searchKeyword" placeholder="e.g. Uber" />
+      <input type="date" id="filterDate" />
+      <select id="filterCategory"></select>
+      <button onclick="applyFilter()">Filter</button>
+    </div>
+
+    <!-- Expense Table -->
+    <div class="form-section">
+      <h3>Transaction List</h3>
+      <table id="transactionTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filled dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    // Placeholder JS setup
+    function addTransaction() {
+      alert("Transaction added (functionality coming soon)");
+    }
+    function applyFilter() {
+      alert("Filtering data (functionality coming soon)");
+    }
+  </script>
+<script src="expense.js"></script>
+ 
+ 
+</body>
+</html>
