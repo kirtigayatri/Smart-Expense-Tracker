@@ -8,6 +8,7 @@ A lightweight, browser-based personal finance tool that enables users to add, de
 
 🛠️ Key Features
 ✅ **Dashboard Summary** – Instant calculation of Total Income, Total Expenses, and Net Savings.
+
 ✅ **CRUD Transactions** – Easily create, read, and delete transactions with details like date, category, amount, and description.
 🔍 **Advanced Filtering** – Search by keyword, or filter by specific date and dynamically generated categories with instant updates.
 📊 **Live Charts** – Pie, Bar, and Line charts powered by Chart.js that update dynamically based on filtered transaction data.
